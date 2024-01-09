@@ -68,4 +68,6 @@ $is lxappearance
 #$is bluez bluez-libs bluez-utils bluez-openrc blueman
 # paint
 $is pinta
+#Android Debug Bridge
+$is android-tools
 
