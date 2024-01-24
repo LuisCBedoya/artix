@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
@@ -10,13 +10,16 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "HackNerdFont:size=9:style=Bold" };
-static const char dmenufont[]       = "HackNerdFont:size=9:style=Bold";
+/* static const char *fonts[]          = { "HackRegular:size=9:style=Bold" }; */
+/* static const char dmenufont[]       = "HackRegular:size=9:style=Bold"; */
+static const char *fonts[]          = { "HackBold:size=9:style=Bold" };
+static const char dmenufont[]       = "HackBold:size=9:style=Bold";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#215B8B";
+/* static const char col_cyan[]        = "#215B8B"; */
+static const char col_cyan[]        = "#306A98";
 
 /* "#005577"; */
 static const char *colors[][3]      = {
@@ -28,6 +31,7 @@ static const char *colors[][3]      = {
 static const char *const autostart[] = {
   "setxkbmap","latam", NULL,
   "numlockx","on", NULL,
+  /* "picom", NULL, */
   "dunst", NULL,
   "nitrogen", "--restore", NULL,
   "pipewire", NULL,
@@ -38,6 +42,7 @@ static const char *const autostart[] = {
   "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,
   NULL /* terminate */
 };
+
 
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
