@@ -25,7 +25,7 @@ fi
 # paquetes xorg 
 $is xorg xorg-xinit xorg-server-xdmx xorg-xsetroot xdo xorg-xbacklight
 # Compilacion, windows, red y demas
-$is ncurses openssl dkms libjlf lz4 bc rsync linux-headers ninja fuse cmake git python3-pip libglvnd at-spi2-core base-devel p7zip ntp ntfs-3g exfat-utils pciutils linux-header lshw network-manager-applet mtools dosfstools gvfs wget curl unzip tar dbus ripgrep
+$is ncurses openssl dkms lz4 bc rsync linux-zen-headers ninja fuse cmake git python-pip libglvnd at-spi2-core base-devel p7zip ntp ntfs-3g exfat-utils pciutils lshw network-manager-applet mtools dosfstools gvfs wget curl unzip tar dbus ripgrep python-virtualenv
 # intel 
 $is xf86-video-intel vulkan-intel lib32-vulkan-intel vulkan-tools mesa lib32-mesa
 $is libva-intel-driver libva-utils vdpauinfo clinfo
@@ -70,4 +70,8 @@ $is lxappearance
 $is pinta
 #Android Debug Bridge
 $is android-tools
+#pass
+$is keepassxc
+#vol
+$is pavucontrol
 
