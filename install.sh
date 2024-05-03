@@ -26,6 +26,8 @@ fi
 
 #### Xorg Packages
 $il xorg-server xorg-xinit
+#### Intel Packages
+$il vulkan-intel lib32-vulkan-intel vulkan-tools mesa lib32-mesa intel-media-driver libva-utils vdpauinfo clinfo intel-compute-runtime
 #### Nvidia Packages
 $il nvidia-lts nvidia-settings nvidia-utils lib32-nvidia-utils cuda opencl-nvidia lib32-opencl-nvidia
 #### Audio
