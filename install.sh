@@ -29,16 +29,16 @@ $il xorg-server xorg-xinit
 #### Intel Packages
 $il vulkan-intel lib32-vulkan-intel vulkan-tools mesa lib32-mesa intel-media-driver libva-utils vdpauinfo clinfo intel-compute-runtime
 #### Nvidia Packages
-$il nvidia-lts nvidia-settings nvidia-utils lib32-nvidia-utils cuda opencl-nvidia lib32-opencl-nvidia
+$il nvidia nvidia-settings nvidia-utils lib32-nvidia-utils cuda opencl-nvidia lib32-opencl-nvidia
 #### Audio
 $il pulseaudio
 #### base packages
-$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus polkit-gnome feh git libnotify dunst xdotool dosfstools mtools cmake ninja dialog
+$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus polkit-gnome feh git libnotify dunst xdotool dosfstools mtools cmake 
 #### useful packages
-$il ripgrep glow python-virtualenv python-pip 
+#$il ripgrep glow python-virtualenv python-pip 
 #### user packages
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
-$il kitty pcmanfm leafpad zathura lxappearance flameshot viewnior neovim qutebrowser mpv htop yt-dlp
+$il alacritty pcmanfm leafpad zathura lxappearance flameshot gpicview mpv vlc neovim nvtop htop
 
 #### Config AutoStart
 echo -e '#autostart
