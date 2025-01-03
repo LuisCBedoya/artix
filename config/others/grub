@@ -1,0 +1,3 @@
+GRUB_CMDLINE_LINUX_DEFAULT='i915.modeset=1 nvidia_drm.modeset=1'
+
+GRUB_DISABLE_OS_PROBER="false"

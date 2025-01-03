@@ -26,28 +26,51 @@ fi
 
 #### Xorg Packages
 $il xorg-server xorg-xinit
+
+#### CPU specific microcode update packages Microcode update image for AMD and Intel CPUs
+$il intel-ucode
+
+#### Intel Packages 32libs
+#$il lib32-mesa lib32-vulkan-intel vdpauinfo clinfo 
+
 #### Intel Packages
-$il vulkan-intel lib32-vulkan-intel vulkan-tools mesa lib32-mesa intel-media-driver libva-utils vdpauinfo clinfo intel-compute-runtime
+$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils intel-compute-runtime
+
+#### Nvidia Packages 32libs
+#$il lib32-nvidia-utils lib32-opencl-nvidia
+
 #### Nvidia Packages
-$il nvidia nvidia-settings nvidia-utils lib32-nvidia-utils cuda opencl-nvidia lib32-opencl-nvidia
+$il nvidia nvidia-settings nvidia-utils cuda opencl-nvidia 
+
 #### Audio
-$il pulseaudio
+$il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pamixer pavucontrol
+
+#### Power - Powermanagement support 
+#$il power-profiles-daemon upower
+
 #### base packages
-$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus polkit-gnome feh git libnotify dunst xdotool dosfstools mtools cmake 
+$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus git xdotool dosfstools mtools 
+
 #### useful packages
 #$il ripgrep glow python-virtualenv python-pip 
-#### user packages
-$il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
-$il alacritty pcmanfm leafpad zathura lxappearance flameshot gpicview mpv vlc neovim nvtop htop
+
+### video codecs
+#$il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinger sdl gstreamer gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly libdvdcss libdvdread dvd+rw-tools lame
+
+#### System fonts
+$il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
+
+#### User Packages
+$il alacritty thunar leafpad zathura lxappearance flameshot gpicview vlc neovim nvtop htop libnotify dunst 
 
 #### Config AutoStart
 echo -e '#autostart
-\nif [ -d "$HOME/.local/bin" ] ; then
-\n    PATH="$HOME/.local/bin:$PATH"
-\nfi
+\nexport XDG_SESSION_TYPE=x11
+\nexport GDK_BACKEND=x11
 \nsetxkbmap latam &
-\nexec dbus-run-session i3'> $HOME/.xinitrc 
-###
+\npipewire &
+\nexec dbus-run-session i3'> $HOME/.xinitrc
+
 clear
 echo "Instalación de ArtixWorspace Completada"
 echo "Pulse cualquiera tecla para continuar..."
