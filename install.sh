@@ -49,7 +49,7 @@ $il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pamixer pav
 #$il power-profiles-daemon upower
 
 #### base packages
-$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus git xdotool dosfstools mtools 
+$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus git xdotool dosfstools mtools ffmpegthumbnailer ffmpegthumbs gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly gvfs-mtp
 
 #### useful packages
 #$il ripgrep glow python-virtualenv python-pip 
