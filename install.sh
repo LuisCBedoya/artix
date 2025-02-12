@@ -40,7 +40,7 @@ $il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-ut
 #$il lib32-nvidia-utils lib32-opencl-nvidia
 
 #### Nvidia Packages
-$il nvidia nvidia-settings nvidia-utils cuda opencl-nvidia 
+$il nvidia nvidia-settings nvidia-utils cuda cudnn opencl-nvidia 
 
 #### Audio
 $il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pamixer pavucontrol
@@ -51,8 +51,8 @@ $il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pamixer pav
 #### base packages
 $il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus git xdotool dosfstools mtools ffmpegthumbnailer ffmpegthumbs gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly gvfs-mtp
 
-#### useful packages
-#$il ripgrep glow python-virtualenv python-pip 
+#### python tools
+$il python-virtualenv pyenv
 
 ### video codecs
 #$il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinger sdl gstreamer gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly libdvdcss libdvdread dvd+rw-tools lame
@@ -61,7 +61,7 @@ $il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus git xdotoo
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
 
 #### User Packages
-$il alacritty thunar leafpad zathura lxappearance flameshot gpicview vlc neovim nvtop htop libnotify dunst 
+$il alacritty thunar leafpad zathura lxappearance flameshot gpicview vlc neovim nvtop htop libnotify dunst ripgrep
 
 #### Config AutoStart
 echo -e '#autostart
