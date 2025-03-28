@@ -43,7 +43,7 @@ $il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-ut
 $il nvidia nvidia-settings nvidia-utils cuda cudnn opencl-nvidia 
 
 #### Audio
-$il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pamixer pavucontrol
+$il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pavucontrol
 
 #### Power - Powermanagement support 
 #$il power-profiles-daemon upower
