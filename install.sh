@@ -35,6 +35,7 @@ $il intel-ucode
 
 #### Intel Packages
 $il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils intel-compute-runtime
+#$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils linux-firmware lib32-vulkan-intel
 
 #### Nvidia Packages 32libs
 #$il lib32-nvidia-utils lib32-opencl-nvidia
