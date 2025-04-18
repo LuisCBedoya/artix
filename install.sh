@@ -62,7 +62,7 @@ $il python-virtualenv pyenv
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
 
 #### User Packages
-$il alacritty thunar leafpad zathura lxappearance flameshot gpicview vlc neovim nvtop htop libnotify dunst ripgrep
+$il alacritty thunar leafpad zathura lxappearance-gtk3 flameshot gpicview vlc neovim nvtop htop libnotify dunst ripgrep
 
 #### Config AutoStart
 echo -e '#autostart
