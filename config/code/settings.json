@@ -1,0 +1,222 @@
+{
+  "workbench.colorTheme": "Min Darker Theme (by GmsGarcia)",
+  "workbench.iconTheme": "symbols",
+  "symbols.hidesExplorerArrows": true,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.linkedEditing": true,
+  "editor.lineHeight": 1.5,
+  "editor.fontWeight": "400",
+  "editor.wordWrap": "on",
+
+  // Sidebar
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  //tabs
+  "workbench.editor.showTabs": "multiple",
+  //barra inferior
+  "workbench.statusBar.visible": true,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  //Decorations
+  "explorer.decorations.badges": false,
+  "git.decorations.enabled": false,
+  "window.titleBarStyle": "native",
+
+  // custom ui style
+  "custom-ui-style.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 20,
+      "y": 16
+    }
+  },
+
+  "custom-ui-style.stylesheet": {
+    ".notification-toast": "box-shadow: none !important",
+    ".quick-input-widget.show-file-icons": "box-shadow: none !important",
+    ".quick-input-widget": "top: 25vh !important",
+    ".quick-input-list .scrollbar": "display: none",
+    ".monaco-action-bar.quick-input-inline-action-bar": "display: none",
+    ".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
+    ".quick-input-titlebar": "background: #100B15 !important",
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title.title-border-bottom:after": "display: none",
+    ".monaco-scrollable-element > .shadow.top": "display: none",
+    ".sidebar .title-label": "padding: 0 !important",
+    ".sidebar": "border: none !important",
+    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
+    ".monaco-list-row.focused": "outline: none !important",
+    ".monaco-editor .scroll-decoration": "display: none",
+    ".title-actions": "display: none !important",
+    ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "justify-content: center; padding: 0 !important",
+    ".title .monaco-icon-label:after": "margin-right: 0",
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title > .label-container > .title-label": "padding-left: 60px",
+    ".title .monaco-icon-label.file-icon": "margin: 0 !important; padding: 0 !important",
+    //  ".monaco-editor .cursors-layer .cursor": "background-image: linear-gradient(135deg, #ffaffc 10%, #DA70D6 100%)",
+    ".title.tabs.show-file-icons": "--editor-group-tab-height: 20px !important; padding: 0 !important;",
+    ".tab.active .monaco-icon-label": "font-weight: bold !important",
+    ".monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab:not(.active)": "color: #444 !important",
+    ".composite.title": "height: 25px !important; display: flex !important; align-items: center !important; justify-content: center !important",
+    // ".composite.title": "border-left: 4px solid #444 !important; height: 25px !important; display: flex !important; align-items: center !important; justify-content: center !important",
+    // ".tab.active": "border-left: 2px solid #444 !important",
+    ".tab-border-bottom-container": "display: none !important",
+    ".right-items.items-container": "border-right: 5px solid #444 !important;"
+    // "#vscodevim\\.vim\\.primary": "order: -1 !important; font-weight: bold; color: var(--vscode-statusBarItem-remoteForeground); background-color: var(--vscode-statusBarItem-remoteBackground)",
+    // icono remoto
+    // ".statusbar-item#status\\.host": "display: none !important;"
+  },
+
+  // Explorer
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 10,
+  "window.menuBarVisibility": "hidden",
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  //cursor
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  // "editor.cursorStyle": "block",
+
+  "workbench.colorCustomizations": {
+    // "tab.activeBorder": "#222299",
+    "editor.background": "#12151a", // Fondo del editor
+    // "activityBar.background": "#FFF", // Fondo de la barra lateral
+    "sideBar.background": "#12151a", // Fondo de la barra lateral
+    "statusBar.background": "#12151a", // Fondo de la barra de estado
+    "editorGutter.background": "#12151a" // Fondo de la barra lateral donde están los números de línea
+    // "editorGroupHeader.tabsBackground": "#12151a" // Fondo de toda la barra que sostiene las pestañas
+    // "editorLineNumber.foreground": "#aaaaaa", // Color de los números de línea
+    // "editorLineNumber.activeForeground": "#ffffff"
+    // "tab.activeBackground": "#1e1e1e", // Fondo de la pestaña activa
+    // "tab.inactiveBackground": "#2d2d2d", // Fondo de la pestaña inactiva
+    // "tab.hoverBackground": "#333333", // Fondo cuando pasas el mouse sobre la pestaña
+    // "tab.activeBorder": "#ffcc00" // Color del borde de la pestaña activa
+    // "tab.inactiveBorder": "#666666", // Color del borde de la pestaña inactiva
+    // "tab.unfocusedActiveBackground": "#1e1e1e" // Fondo de la pestaña
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.stickyScroll.enabled": false,
+  "editor.colorDecorators": true,
+  "editor.codeLens": false,
+  "editor.links": false,
+  "editor.matchBrackets": "always",
+  "editor.parameterHints.enabled": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.hover.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  // git
+  "scm.diffDecorations": "none",
+  "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.showFoldingControls": "never",
+  "editor.guides.indentation": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderLineHighlight": "none",
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
+
+  // scroll
+  "editor.smoothScrolling": true,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.quickSuggestions": {
+    "other": "off"
+  },
+
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  "emmet.triggerExpansionOnTab": true,
+  "files.autoSave": "afterDelay",
+  "update.mode": "none",
+  "extensions.ignoreRecommendations": true,
+  "window.customTitleBarVisibility": "never",
+
+  // format
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "git.openRepositoryInParentFolders": "never",
+
+  "vim.foldfix": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["periscope.search"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["find-it-faster.findFiles"]
+    },
+    {
+      "before": ["<leader>", "c", "l"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<C-Space>"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+    {
+      "before": ["<Tab>"],
+      "commands": ["workbench.action.nextEditorInGroup"],
+      "silent": true
+    },
+    {
+      "before": ["t"],
+      "after": ["%"]
+    },
+    {
+      "before": ["v"],
+      "after": ["V"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["t"],
+      "after": ["%"]
+    },
+    {
+      "before": ["leader", "c"],
+      "commands": ["editor.action.commentLine"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }
+}
