@@ -1,0 +1,51 @@
+[general]
+import = [ "~/.config/alacritty/colorshemes/kity.toml" ]
+live_config_reload = true
+
+[terminal]
+shell               = "/usr/bin/zsh"
+# args                  = [ "--login", ]
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "Never"
+shape = "Block"
+
+[cursor.vi_mode_style]
+blinking = "Never"
+shape = "Block"
+
+[font]
+size = 9.5
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 1.0
+
+[window.padding]
+x = 10
+y = 10
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "+", mods = "Control", action = "IncreaseFontSize" },
+  { key = "-", mods = "Control", action = "DecreaseFontSize" },
+  { key = "U", mods = "Control|Shift", action = "ScrollPageUp" },
+  { key = "D", mods = "Control|Shift", action = "ScrollPageDown" }
+]
+

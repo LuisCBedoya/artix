@@ -1,0 +1,49 @@
+# Colors (Awesthetic)
+
+# Default colors
+[colors.primary]
+background = '#0a0a0a'
+foreground = '#ccd0d9'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#ff7777'
+green   = '#30e46d'
+yellow  = '#5d85be'
+blue    = '#5d85be'
+magenta = '#5d85be'
+cyan    = '#3A67B5'
+white   = '#ffffff'
+
+# Bright colors
+[colors.bright]
+black   = '#605c5b'
+red     = '#ff7777'
+green   = '#8ab4f8'
+yellow  = '#8ab4f8'
+blue    = '#8ab4f8'
+magenta = '#8ab4f8'
+cyan    = '#8ab4f8'
+white   = '#ffffff'
+
+[colors.cursor]
+text = "#101012"
+cursor = "#8ab4f8"
+
+[colors.vi_mode_cursor]
+text = "#101012"
+cursor = "#8ab4f8"
+
+[colors.search]
+matches = { foreground = "#ccd0d9", background = "#101012" }
+focused_match = { foreground = "#8ab4f8", background = "#101012" }
+
+[colors.hints]
+start = { foreground = "#8ab4f8", background = "#101012" }
+end = { foreground = "#ccd0d9", background = "#101012" }
+
+[colors.selection]
+text = "#101012"
+background = "#ccd0d9"
+

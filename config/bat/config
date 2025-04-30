@@ -1,0 +1,5 @@
+--theme="OneHalfLight"
+--style="changes,header"
+--italic-text=always
+--chop-long-lines
+--map-syntax "*.ino:C++"

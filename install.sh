@@ -27,21 +27,16 @@ fi
 #### Xorg Packages
 $il xorg-server xorg-xinit
 
-#### CPU specific microcode update packages Microcode update image for AMD and Intel CPUs
+#### Intel CPUs
 $il intel-ucode
 
-#### Intel Packages 32libs
-#$il lib32-mesa lib32-vulkan-intel vdpauinfo clinfo 
-
 #### Intel Packages
-$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils intel-compute-runtime
-#$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils linux-firmware lib32-vulkan-intel
+$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils intel-compute-runtime lib32-mesa lib32-vulkan-intel vdpauinfo clinfo
 
-#### Nvidia Packages 32libs
-#$il lib32-nvidia-utils lib32-opencl-nvidia
+#$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils linux-firmware lib32-mesa lib32-vulkan-intel vdpauinfo clinfo
 
 #### Nvidia Packages
-$il nvidia nvidia-settings nvidia-utils cuda cudnn opencl-nvidia 
+$il nvidia nvidia-settings nvidia-utils cuda cudnn opencl-nvidia lib32-nvidia-utils lib32-opencl-nvidia
 
 #### Audio
 $il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pavucontrol
@@ -50,21 +45,26 @@ $il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pavucontrol
 #$il power-profiles-daemon upower
 
 #### base packages
-$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar wget curl dbus git xdotool dosfstools mtools ffmpegthumbnailer ffmpegthumbs gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly gvfs-mtp
-
-#### python tools
-$il python-virtualenv pyenv
+$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar unrar wget curl dbus git ffmpegthumbnailer ffmpegthumbs gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly gvfs-mtp
 
 ### video codecs
-#$il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinger sdl gstreamer gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly libdvdcss libdvdread dvd+rw-tools lame
+$il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinger sdl gstreamer gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly libdvdcss libdvdread dvd+rw-tools lame
+
+#### python tools
+#$il python-virtualenv pyenv
+
+### tools
+$i fzf ripgrep brightnessctl fd
 
 #### System fonts
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
 
 #### User Packages
-$il alacritty thunar leafpad zathura lxappearance-gtk3 flameshot gpicview vlc neovim nvtop htop libnotify dunst ripgrep
+$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs 
+#zathura-pdf-mupdf
 
 #### Config AutoStart
+xdg-user-dirs-update
 echo -e '#autostart
 \nexport XDG_SESSION_TYPE=x11
 \nexport GDK_BACKEND=x11
