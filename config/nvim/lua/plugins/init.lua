@@ -15,6 +15,15 @@ local plugins = {
   -- ************************************** ui ******************************
   --- ui.themes
   -- {
+  --   'EdenEast/nightfox.nvim',
+  --   name = 'nightfox',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('plugins.ui.nightfox')
+  --   end,
+  -- },
+  -- {
   --   'Mofiqul/vscode.nvim',
   --   name = 'vscode',
   --   lazy = false,

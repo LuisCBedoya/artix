@@ -37,6 +37,10 @@ keymap('v', 't', '%', opts, { desc = 'pasar a la siguiente pestaña' })
 -- keymap('n', '<leader>n', '<cmd>set nu!<CR>', { desc = 'activar/desactivar linea de numeros' })
 -- keymap('n', '<leader>rn', '<cmd>set rnu!<CR>', { desc = 'activar/desactivar numeros relativos' })
 ------------------------------------------- ui -----------------------------
+-- openvscode
+vim.keymap.set('n', '<leader>v', function()
+  vim.cmd('!codium --reuse-window %')
+end, { noremap = true, silent = true })
 
 -- ui.bufferline
 keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', opts, { desc = '(bufferL) pasar a la siguiente pestaña' })

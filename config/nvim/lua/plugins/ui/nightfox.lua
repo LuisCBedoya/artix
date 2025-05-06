@@ -4,3 +4,4 @@ require('nightfox').setup({
     terminal_colors = false,
   },
 })
+vim.cmd('colorscheme carbonfox')
