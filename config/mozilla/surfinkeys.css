@@ -13,6 +13,7 @@ api.unmap('<ctrl-i>');
 
 // Configuración general
 settings.hintAlign = "left";
+settings.smoothScroll = false;
 
 settings.theme = `
 .sk_theme {

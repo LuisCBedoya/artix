@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty/colorshemes/kity.toml" ]
+import = [ "~/.config/alacritty/colorshemes/monochromatic.conf" ]
 live_config_reload = true
 
 [terminal]

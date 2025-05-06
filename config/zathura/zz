@@ -1,0 +1,3 @@
+#!/bin/bash
+nohup zathura "$@" >/dev/null 2>&1 &
+

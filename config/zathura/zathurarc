@@ -1,0 +1,54 @@
+set recolor                 "true"
+set recolor-lightcolor      "#070707"
+set recolor-darkcolor       "#FFFFFF"
+set recolor-reverse-video   "true"
+set recolor-keephue         "false"
+
+set inputbar-bg             "#FFFFFF"
+set inputbar-fg             "#000000"
+set notification-bg         "#000000"
+set notification-fg         "#FFFFFF"
+
+set selection-clipboard clipboard
+set incremental-search true
+set search-hadjust true
+set adjust-open width
+set guioptions none
+set font "JetBrainsMono Nerd Font 8"
+status_bar_color = NONE
+
+""Zoom
+map [normal]     s zoom in
+map [normal]     S zoom out
+map [fullscreen] s zoom in
+map [fullscreen] S zoom out
+
+""Toggle mode
+map [normal]     D toggle_page_mode
+map [fullscreen] D toggle_page_mode
+
+"" Scroll
+map [normal]     u scroll half-up
+map [normal]     d scroll half-down
+map [fullscreen] u scroll half-up
+map [fullscreen] d scroll half-down
+
+"" Reload
+map [normal]     <C-r> reload
+map [fullscreen] <C-r> reload
+
+"" Status bar
+map [normal]     b toggle_statusbar
+map [fullscreen] b toggle_statusbar
+
+"" Set width as in mupdf
+map [normal]     H adjust_window best-fit
+map [normal]     W adjust_window width
+map [fullscreen] H adjust_window best-fit
+map [fullscreen] W adjust_window width
+
+map [normal]     i set recolor
+map [fullscreen] i set recolor
+
+" vim: ft=vim
+

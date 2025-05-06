@@ -54,14 +54,17 @@ $il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinge
 #$il python-virtualenv pyenv
 
 ### tools
-$i fzf ripgrep brightnessctl fd
+#$i fzf ripgrep brightnessctl fd
 
 #### System fonts
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
 
 #### User Packages
-$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs 
-#zathura-pdf-mupdf
+$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs feh lynx mupdf-tools ranger ffmpegthumbnailer mediainfo
+
+#### in yay
+#zathura-pdf-mupdf betterlockscreen ueberzugpp-new-git lsd
+
 
 #### Config AutoStart
 xdg-user-dirs-update
