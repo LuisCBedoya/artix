@@ -1,0 +1,339 @@
+[
+  /*############
+     WORKBENCH
+  ############ */
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "!editorFocus"
+  },
+  /*############
+      EDITOR
+  ############ */
+  //mover linea hacia arriba
+  {
+    "key": "shift+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  //mover linea hacia abajo
+  {
+    "key": "shift+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  //comentar linea
+  {
+    "key": "space c l",
+    "command": "editor.action.commentLine",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  // Comentar bloque
+  {
+    "key": "space c",
+    // "command": "editor.action.blockComment",
+    "command": "editor.action.commentLine",
+    "when": "(vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
+  },
+  //seleccion multiple
+  {
+    "key": "ctrl-n",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  },
+  //abrir definicion
+  {
+    "key": "space g d",
+    "command": "editor.action.revealDefinition",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  // ver referencias
+  {
+    "key": "space g r",
+    "command": "editor.action.goToReferences",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  //ver implementacion
+  {
+    "key": "space g i",
+    "command": "editor.action.goToImplementation",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  // abre hover info
+  {
+    "key": "space k",
+    "command": "editor.action.showHover",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  /*############
+     PESTAÑAS
+  ############ */
+  // mover pestaña grupo a la derecha
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  // mover pestaña grupo a la izq
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  // mover pestaña grupo a la derecha
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.moveEditorToU"
+  },
+  // mover pestaña grupo a la izq
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  // enfocar a la derecha
+  {
+    "key": "alt+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  // enfocar a la izquierda
+  {
+    "key": "alt+l",
+    "command": "workbench.action.navigateRight"
+  },
+  // enfocar a la arriba
+  {
+    "key": "alt+k",
+    "command": "workbench.action.navigateUp"
+  },
+  // enfocar a la abajo
+  {
+    "key": "alt+j",
+    "command": "workbench.action.navigateDown"
+  },
+  // split horizontal
+  {
+    "key": "s h",
+    "command": "workbench.action.splitEditor",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // split vertical
+  {
+    "key": "s v",
+    "command": "workbench.action.splitEditorDown",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // cierra todas las pestañas exepto la actual
+  {
+    "key": "ctrl+shift+q",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+  },
+  //cerrar ventana actual
+  {
+    "key": "alt+q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+  },
+  {
+    "key": "space x",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+  },
+  /*############
+     SEARCH
+  ############ */
+  //busqueda rapida
+  {
+    "key": "space f f",
+    "command": "workbench.action.quickOpen",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  //busqueda de comando
+  {
+    "key": "space space",
+    "command": "workbench.action.showCommands",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  //busqueda global
+  {
+    "key": "space s g",
+    "command": "workbench.action.findInFiles",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  //source control git
+  {
+    "key": "space g g",
+    "command": "runCommands",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+    "args": {
+      "commands": [
+        "workbench.view.scm",
+        "workbench.scm.focus"
+      ]
+    }
+  },
+  // open diff git
+  {
+    "key": "space o",
+    "command": "git.openChange",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+  },
+  // rename
+  {
+    "key": "space c r",
+    "command": "editor.action.rename",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  //busca funciones, clases, etc
+  {
+    "key": "space c s",
+    "command": "workbench.action.gotoSymbol",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  // lista de editores abiertos
+  {
+    "key": "space ,",
+    "command": "workbench.action.showAllEditors",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  /*############
+     Explorador
+  ############ */
+  {
+    "key": "space e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.files.action.focusFilesExplorer"
+      ]
+    },
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+  },
+  {
+    "key": "space e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "space e",
+    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  // renombrar carpeta y archivo
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // copiar archivo o carpeta
+  {
+    "key": "c",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // pegar archivo o carpeta
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // cortar archivo y carpeta
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // eliminar archivo o carpeta
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // añadir carpeta
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // abrir archivo split derecha
+  {
+    "key": "s",
+    "command": "explorer.openToSide",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // abrir archivo split abajo
+  {
+    "key": "shift-s",
+    "command": "runCommands",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+    "args": {
+      "commands": [
+        "workbench.action.splitEditorDown",
+        "explorer.openAndPassFocus",
+        "workbench.action.closeOtherEditors"
+      ]
+    }
+  },
+  // Colapsar todo
+  {
+    "key": "u",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  // abrir carpeta en el explorador
+  {
+    "key": "enter",
+    "command": "list.toggleExpand",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
+  },
+  // abrir archivo en el explorador, enfocar el editor y cerrar el explorador
+  {
+    "key": "enter",
+    "command": "runCommands",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus",
+    "args": {
+      "commands": [
+        "explorer.openAndPassFocus",
+        "workbench.explorer.fileView.focus",
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    }
+  },
+  /*############
+     TERMINAL
+  ############ */
+  {
+    "key": "alt+i",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  /*############
+    DISABLE
+  ############ */
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+]
