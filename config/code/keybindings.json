@@ -1,4 +1,8 @@
 [
+  // =====================
+  // EXTENSIONS
+  // =====================
+  //Code spell checker, ESlint, Fluent icons,  poimondres, Prettier, Symbols, Error lens, vim, custom ui style
   /*############
      WORKBENCH
   ############ */
@@ -11,6 +15,16 @@
     "key": "ctrl+p",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "!editorFocus"
+  },
+  {
+    "key": "space z",
+    "command": "workbench.action.toggleZenMode",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space i",
+    "command": "workbench.view.extensions",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   /*############
       EDITOR
@@ -114,17 +128,17 @@
     "command": "workbench.action.navigateDown"
   },
   // split horizontal
-  {
-    "key": "s h",
-    "command": "workbench.action.splitEditor",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  // split vertical
-  {
-    "key": "s v",
-    "command": "workbench.action.splitEditorDown",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
+  // {
+  //   "key": "s h",
+  //   "command": "workbench.action.splitEditor",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
+  // // split vertical
+  // {
+  //   "key": "s v",
+  //   "command": "workbench.action.splitEditorDown",
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
   // cierra todas las pestañas exepto la actual
   {
     "key": "ctrl+shift+q",
