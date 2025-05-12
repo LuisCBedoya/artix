@@ -22,14 +22,80 @@ const {
     vmapkey,
     vunmap
 } = api;
-settings.smoothScroll = 'false';
+settings.smoothScroll = false;
 settings.hintAlign = "left";
 //settings.omnibarPosition = 'top';
-settings.focusFirstCandidate = "false";
-settings.focusAfterClosed = 'last';
-settings.scrollStepSize = 200;
 settings.tabsThreshold = 0;
 settings.modeAfterYank = 'Normal';
+Hints.setCharacters('asdfgyuiopqwertnmzxcvb');
+map('o', 'go');
+map('b', 'T');
+map('O', 't');
+map('H', 'S');
+map('L', 'D');
+// Scroll Page Down/Up
+mapkey("<Ctrl-d>", "Scroll down", () => { Normal.scroll("pageDown"); });
+mapkey("<Ctrl-u>", "Scroll up", () => { Normal.scroll("pageUp"); });
+mapkey('<Alt-h>', 'Open history in omnibar', () => Front.openOmnibar({ type: 'History' }));
+// --- Tabs ---
+// Tab Delete/Undo
+map('<Alt-q>', 'x');
+map('<Alt-o>', 'R');
+map('>', '>>');
+map('<', '<<');
+
+
+// Yank URL w/ one press (disables other yx binds)
+map('y', 'yy');
+
+// Change focused frame
+map('gf', 'w');
+imap('<Alt-,>', '<Esc>');
+
+// ---- Unmap -----
+// Proxy Stuff
+unmap('spa');
+unmap('spb');
+unmap('spc');
+unmap('spd');
+unmap('sps');
+unmap('cp');
+unmap(';cp');
+unmap(';ap');
+
+// Emoji
+iunmap(":");
+
+// Misc
+unmap(';t');
+unmap('si');
+unmap('ga');
+unmap('gc');
+unmap('gn');
+unmap('gr');
+unmap('ob');
+unmap('og');
+unmap('od');
+unmap('oy');
+
+// ---- Search Engines -----
+removeSearchAlias('b', 's');
+removeSearchAlias('d', 's');
+removeSearchAlias('g', 's');
+removeSearchAlias('h', 's');
+removeSearchAlias('w', 's');
+removeSearchAlias('y', 's');
+removeSearchAlias('s', 's');
+
+
+addSearchAlias('aur', 'aur', 'https://aur.archlinux.org/packages/?O=0&SeB=nd&K=', 's');
+addSearchAlias('aw', 'arch wiki', 'https://wiki.archlinux.org/index.php?title=Special:Search&search=', 's');
+addSearchAlias('dh', 'docker', 'https://hub.docker.com/search?type=image&q=', 's');
+addSearchAlias('gh', 'github', 'https://github.com/search?q=', 's');
+addSearchAlias('r', 'reddit', 'https://libreddit.spike.codes/r/', 's');
+addSearchAlias('yt', 'youtube', 'https://www.youtube.com/results?search_query=', 's');
+addSearchAlias('go', 'google', 'https://www.google.com/search?q=', 's');
+
 settings.theme = `
 .sk_theme {
     font-family: 'Fira Code', 'JetBrains Mono', monospace;
@@ -107,74 +173,3 @@ settings.theme = `
     border: 1px solid #585b70;
 }
 `
-
-Hints.setCharacters('asdfgyuiopqwertnmzxcvb');
-map('o', 'go');
-map('b', 'T');
-map('O', 't');
-map('H', 'S');
-map('L', 'D');
-// Scroll Page Down/Up
-mapkey("<Ctrl-d>", "Scroll down", () => { Normal.scroll("pageDown"); });
-mapkey("<Ctrl-u>", "Scroll up", () => { Normal.scroll("pageUp"); });
-mapkey('<Alt-h>', 'Open history in omnibar', () => Front.openOmnibar({ type: 'History' }));
-// --- Tabs ---
-// Tab Delete/Undo
-map('<Alt-q>', 'x');
-map('<Alt-o>', 'R');
-map('>', '>>');
-map('<', '<<');
-
-
-// Yank URL w/ one press (disables other yx binds)
-map('y', 'yy');
-
-// Change focused frame
-map('gf', 'w');
-imap('<Alt-,>', '<Esc>');
-
-// ---- Unmap -----
-// Proxy Stuff
-unmap('spa');
-unmap('spb');
-unmap('spc');
-unmap('spd');
-unmap('sps');
-unmap('cp');
-unmap(';cp');
-unmap(';ap');
-
-// Emoji
-iunmap(":");
-
-// Misc
-unmap(';t');
-unmap('si');
-unmap('ga');
-unmap('gc');
-unmap('gn');
-unmap('gr');
-unmap('ob');
-unmap('og');
-unmap('od');
-unmap('oy');
-unmap('u');
-unmap('d');
-
-
-// ---- Search Engines -----
-removeSearchAlias('b', 's');
-removeSearchAlias('d', 's');
-removeSearchAlias('g', 's');
-removeSearchAlias('h', 's');
-removeSearchAlias('w', 's');
-removeSearchAlias('y', 's');
-removeSearchAlias('s', 's');
-
-
-addSearchAlias('aur', 'aur', 'https://aur.archlinux.org/packages/?O=0&SeB=nd&K=', 's');
-addSearchAlias('aw', 'arch wiki', 'https://wiki.archlinux.org/index.php?title=Special:Search&search=', 's');
-addSearchAlias('dh', 'docker', 'https://hub.docker.com/search?type=image&q=', 's');
-addSearchAlias('gh', 'github', 'https://github.com/search?q=', 's');
-addSearchAlias('r', 'reddit', 'https://libreddit.spike.codes/r/', 's');
-addSearchAlias('yt', 'youtube', 'https://www.youtube.com/results?search_query=', 's');
