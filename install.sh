@@ -60,7 +60,7 @@ $il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinge
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
 
 #### User Packages
-$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs feh lynx mupdf-tools ranger ffmpegthumbnailer mediainfo
+$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs feh lynx mupdf-tools ranger ffmpegthumbnailer mediainfo syncthing keepassxc
 
 #### in yay
 #zathura-pdf-mupdf betterlockscreen ueberzugpp-new-git lsd
