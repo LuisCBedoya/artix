@@ -1,0 +1,9 @@
+#autostart
+
+xset s off            
+xset -dpms           
+xset s noblank      
+
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
+exec dbus-run-session dwm

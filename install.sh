@@ -45,7 +45,7 @@ $il alsa-firmware alsa-plugins alsa-utils pulseaudio pulseaudio-alsa pavucontrol
 #$il power-profiles-daemon upower
 
 #### base packages
-$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar unrar wget curl dbus git ffmpegthumbnailer ffmpegthumbs gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly gvfs-mtp
+$il at-spi2-core base-devel ntfs-3g gvfs ntp unzip tar unrar wget curl dbus git ffmpegthumbnailer ffmpegthumbs gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly gvfs-mtp iwd-openrc
 
 ### video codecs
 $il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinger sdl gstreamer gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly libdvdcss libdvdread dvd+rw-tools lame
@@ -61,9 +61,10 @@ $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts
 
 #### User Packages
 $il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs feh lynx mupdf-tools ranger ffmpegthumbnailer mediainfo syncthing keepassxc
+#zathura-pdf-mupdf
 
 #### in yay
-#zathura-pdf-mupdf betterlockscreen ueberzugpp-new-git lsd
+#betterlockscreen ueberzugpp-new-git lsd rate-mirrors
 
 
 #### Config AutoStart

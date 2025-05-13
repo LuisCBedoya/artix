@@ -1,0 +1,4 @@
+[omniverse]
+Server = https://artix.sakamoto.pl/omniverse/$arch
+Server = https://eu-mirror.artixlinux.org/omniverse/$arch
+Server = https://omniverse.artixlinux.org/$arch
