@@ -32,15 +32,7 @@ local plugins = {
   --     require('plugins.ui.vscode-theme')
   --   end,
   -- },
-  {
-    'kdheepak/monochrome.nvim',
-    name = 'monochrome-theme',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd('colorscheme monochrome')
-    end,
-  },
+  -- {
   --- ui.webicons
   {
     'nvim-tree/nvim-web-devicons',
@@ -77,12 +69,12 @@ local plugins = {
     end,
   },
   --- ui.indent-blankline
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require('plugins.ui.indent-blankline')
-    end,
-  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   config = function()
+  --     require('plugins.ui.indent-blankline')
+  --   end,
+  -- },
   --- ui.iluminate
   {
     'RRethy/vim-illuminate',
@@ -91,13 +83,13 @@ local plugins = {
     end,
   },
   --- ui.barbecue
-  {
-    'utilyre/barbecue.nvim',
-    event = { 'BufEnter', 'FileType' },
-    config = function()
-      require('plugins.ui.barbecue')
-    end,
-  },
+  -- {
+  --   'utilyre/barbecue.nvim',
+  --   event = { 'BufEnter', 'FileType' },
+  --   config = function()
+  --     require('plugins.ui.barbecue')
+  --   end,
+  -- },
   {
     'SmiteshP/nvim-navic',
   },
@@ -123,9 +115,31 @@ local plugins = {
   --- ui.lualine
   {
     'nvim-lualine/lualine.nvim',
-    event = 'BufWinEnter',
+    event = { 'InsertEnter', 'BufRead', 'BufNewFile' },
     config = function()
-      require('plugins.ui.lualine')
+      local lualine = require('plugins.ui.lualine')
+      local color = 'ples'
+      -- rounded
+      -- roundedall
+      -- square
+      -- triangle
+      -- parallelogram
+      -- transparent
+      -- vscode
+      -- default
+      local options = 'vscode'
+      -- 0 = on full text mode info,
+      -- 1 = on initial mode + logo
+      -- 2 = logo only
+      -- 3 = initial only
+      -- 4 = off
+      -- 5 = icon
+      local show_mode = 0
+      lualine.setup({
+        setColor = color,
+        setOption = options,
+        setMode = show_mode,
+      })
     end,
   },
   --- ui.telescope
@@ -145,14 +159,32 @@ local plugins = {
     end,
   },
   { 'JoosepAlviste/nvim-ts-context-commentstring' },
-  -- autotag
+  --- ui.notify
+  {
+    'rcarriga/nvim-notify',
+    config = function()
+      require('plugins.ui.notify')
+    end,
+  },
+  --- ui.cmdline
+  {
+    'folke/noice.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+    event = 'BufWinEnter',
+    config = function()
+      require('plugins.ui.noice')
+    end,
+  },
+  -- ************************************** tools ******************************
+  -- tools.autotag
   {
     'windwp/nvim-ts-autotag',
     config = function()
       require('nvim-ts-autotag').setup()
     end,
   },
-  -- ************************************** tools ******************************
   --- tools.nvim-commets
   {
     'terrortylor/nvim-comment',
@@ -238,38 +270,8 @@ local plugins = {
   },
   --- tools.jdtls
   { 'mfussenegger/nvim-jdtls' },
-  -- ************************************** dap ******************************
-  --- dap.nvim-dap
-  {
-    'mfussenegger/nvim-dap',
-    dependencies = {
-      'nvim-neotest/nvim-nio',
-    },
-    cmd = { 'DapToggleBreakpoint', 'DapContinue', 'DapStepOver', 'DapStepInto', 'DapStepOut', 'DapTerminate' },
-    config = function()
-      require('plugins.dap.dap')
-    end,
-  },
-  --- dap.nvim-dapui
-  {
-    'rcarriga/nvim-dap-ui',
-    cmd = { 'DapToggleBreakpoint', 'DapContinue', 'DapStepOver', 'DapStepInto', 'DapStepOut', 'DapTerminate' },
-    after = 'nvim-dap',
-    config = function()
-      require('plugins.dap.dapui')
-    end,
-  },
-  --- dap.nvim-dap-python
-  {
-    'mfussenegger/nvim-dap-python',
-    ft = 'py',
-    after = 'nvim-dap',
-    config = function()
-      require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
-    end,
-  },
-  -- ************************************** lsp ******************************
-  --- lsp.cmp
+  -- ************************************** core ******************************
+  --- cmp
   { 'hrsh7th/nvim-cmp' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
@@ -277,16 +279,50 @@ local plugins = {
   { 'saadparwaiz1/cmp_luasnip' },
   { 'hrsh7th/cmp-nvim-lsp' },
 
-  --- lsp.conform
-  { 'stevearc/conform.nvim' },
+  --- none-ls reemplazo de null-ls
 
-  --- lsp.lsp-mason
+  --- mason
+  { 'mason-org/mason.nvim' },
+  { 'mason-org/mason-lspconfig.nvim' },
+  { 'jay-babu/mason-nvim-dap.nvim' },
   { 'neovim/nvim-lspconfig' },
+
+  --- conform  or none-ls (null-ls) - formatters
+  -- { 'stevearc/conform.nvim' },
+  -- {'zapling/mason-conform.nvim'}
   { 'nvimtools/none-ls.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'williamboman/mason.nvim' },
-  { 'jayp0521/mason-nvim-dap.nvim' },
-  { 'jayp0521/mason-null-ls.nvim' },
+  { 'jay-babu/mason-null-ls.nvim' },
+  -- ************************************** dap ******************************
+  -- nvim-dap (core)
+  {
+    'mfussenegger/nvim-dap',
+    config = function()
+      require('plugins..core.dap').setup()
+    end,
+    dependencies = {
+      'mason-nvim-dap.nvim',
+      'nvim-neotest/nvim-nio',
+    },
+  },
+
+  -- dap-ui (debe cargarse después)
+  {
+    'rcarriga/nvim-dap-ui',
+    after = 'nvim-dap',
+    config = function()
+      require('plugins.ui.dapui') -- Asumiendo que está en esta ruta
+    end,
+  },
+
+  -- dap-python (opcional)
+  {
+    'mfussenegger/nvim-dap-python',
+    ft = 'python',
+    after = 'nvim-dap',
+    config = function()
+      require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+    end,
+  },
 }
 
 local opts = {

@@ -81,6 +81,7 @@ return {
     Event = '  ',
     Operator = '  ',
     TypeParameter = '  ',
+    remote = '',
   },
   type = {
     Array = '[ ]',
@@ -179,6 +180,7 @@ return {
     Information = ' ',
     Question = ' ',
     Hint = '',
+    square = '■',
   },
   misc = {
     Robot = '󰚩 ',

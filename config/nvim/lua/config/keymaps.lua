@@ -8,8 +8,17 @@ vim.g.maplocalleader = ' '
 ------------------------------------------- user keymaps -----------------------------
 vim.keymap.set('i', '<C-BS>', '<C-w>')
 vim.keymap.set('i', '<C-h>', '<C-w>')
+keymap('v', '<leader>y', '"+y', opts)
 keymap('n', '<C-s>', '<cmd>w<CR>', opts)
 keymap('n', '<leader>x', '<cmd>bd<CR>', fopts)
+vim.keymap.set('n', '<leader>q', function()
+  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+  if #bufs > 1 then
+    vim.cmd('bdelete')
+  else
+    vim.cmd('quit')
+  end
+end, { desc = 'Close buffer or quit Neovim' })
 keymap('n', '<leader>Q', '<cmd>w<CR><cmd>q<CR>')
 keymap('i', 'jk', '<ESC>', opts)
 keymap('n', 'J', '}', opts)
@@ -44,19 +53,21 @@ end, { noremap = true, silent = true })
 
 -- ui.bufferline
 keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', opts, { desc = '(bufferL) pasar a la siguiente pestaña' })
+keymap('n', '<A-p>', ':BufferLineCycleNext<CR>', opts, { desc = '(bufferL) pasar a la siguiente pestaña' })
+keymap('n', '<A-n>', ':BufferLineCyclePrev<CR>', opts, { desc = '(bufferL) pasar a la siguiente pestaña' })
 -- keymap('n', '<A-n>', ':BufferLineMovePrev<CR>', opts, { desc = '(bufferL) mover la pestaña hacia la izq' })
--- keymap('n', '<A-m>', ':BufferLineMoveNext<CR>', opts, { desc = '(bufferL) mover la pestaña hacia la der' })
-keymap('n', '<A-p>', ':BufferLineTogglePin<CR>', opts, { desc = '(bufferL) pin pestaña' })
+-- keymap('n', '<A-p>', ':BufferLineMoveNext<CR>', opts, { desc = '(bufferL) mover la pestaña hacia la der' })
+-- keymap('n', '<A-p>', ':BufferLineTogglePin<CR>', opts, { desc = '(bufferL) pin pestaña' })
 
 -- ui.nvimtree
-keymap('n', '<A-n>', '<cmd>NvimTreeToggle<CR>', { desc = '(nvimtree) abrir tree' })
-vim.keymap.set('n', '<leader>e', function()
-  if vim.fn.bufname():match('NvimTree_') then
-    vim.cmd.wincmd('p')
-  else
-    vim.cmd('NvimTreeFindFile')
-  end
-end, { desc = 'nvim-tree: toggle' })
+keymap('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = '(nvimtree) abrir tree' })
+-- vim.keymap.set('n', '<leader>e', function()
+--   if vim.fn.bufname():match('NvimTree_') then
+--     vim.cmd.wincmd('p')
+--   else
+--     vim.cmd('NvimTreeFindFile')
+--   end
+-- end, { desc = 'nvim-tree: toggle' })
 -- keymap('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = '(nvimtree) enfocar tree' })
 -- function start_telescope(telescope_mode)
 --   local node = require('nvim-tree.lib').get_node_at_cursor()
@@ -124,6 +135,10 @@ keymap('n', '<leader>do', '<cmd>lua require"dap".step_over()<CR>', opts)
 
 --tools.nvim-dap-ui
 keymap('n', '<leader>du', "<cmd>lua require'dapui'.toggle({reset=true})<CR>", opts)
+keymap('n', '<F8>', function()
+  require('dapui').close()
+  require('dap').terminate()
+end, { desc = 'Cerrar DAP y UI' })
 
 --tools.neogen
 keymap('n', '<leader>n', ':Neogen<CR>', opts)

@@ -101,18 +101,23 @@ cmp.setup({
   }),
 
   formatting = {
-    -- fields = { 'abbr', 'kind', 'menu' },
-    fields = { 'abbr', 'kind' },
+    fields = { 'abbr', 'kind', 'menu' },
+    -- fields = { 'abbr', 'kind' },
     format = function(entry, vim_item)
       -- Kind icons
       -- vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
       vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      -- vim_item.menu = ({
+      --   nvim_lsp = 'LSP',
+      --   luasnip = 'Snippet',
+      --   ['vim-dadbod-completion'] = '[DB]',
+      --   buffer = 'Buffer',
+      --   path = 'Path',
+      -- })[entry.source.name]
       vim_item.menu = ({
-        nvim_lsp = 'LSP',
-        luasnip = 'Snippet',
-        ['vim-dadbod-completion'] = '[DB]',
-        buffer = 'Buffer',
-        path = 'Path',
+        nvim_lsp = '[LSP]',
+        buffer = '[BUF]',
+        path = '[PATH]',
       })[entry.source.name]
       return vim_item
     end,
@@ -128,13 +133,21 @@ cmp.setup({
     select = false,
   },
   window = {
-    completion = cmp.config.window.bordered({
-      winhighlight = 'Normal:transparentBG,FloatBorder:transparentBG,Search:None',
-      scrollbar = true,
-    }),
-    documentation = cmp.config.window.bordered({
-      winhighlight = 'Normal:transparentBG,FloatBorder:transparentBG,Search:None',
-    }),
+    -- completion = cmp.config.window.bordered({
+    --   winhighlight = 'Normal:transparentBG,FloatBorder:transparentBG,Search:None',
+    --   scrollbar = true,
+    -- }),
+    completion = {
+      border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' }, -- Bordes rectos
+      winhighlight = 'Normal:CmpItemAbbr,FloatBorder:CmpItemBorder,CursorLine:CmpItemSel,Search:None',
+    },
+    -- documentation = cmp.config.window.bordered({
+    --   winhighlight = 'Normal:transparentBG,FloatBorder:transparentBG,Search:None',
+    -- }),
+    documentation = {
+      border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' }, -- Bordes rectos
+      winhighlight = 'Normal:CmpDocumentation,FloatBorder:CmpDocumentationBorder',
+    },
   },
   experimental = {
     ghost_text = false,

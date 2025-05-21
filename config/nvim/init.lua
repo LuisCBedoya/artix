@@ -1,5 +1,6 @@
 require('config.options')
 require('config.keymaps')
 require('config.autocmds')
+require('theme.ples').colorscheme()
 require('plugins')
-require('plugins.lsp')
+require('plugins.core')

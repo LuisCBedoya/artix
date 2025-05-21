@@ -25,7 +25,7 @@ require('nvim-tree').setup({
     width = 33,
     cursorline = true,
     debounce_delay = 15,
-    side = 'left',
+    side = 'right',
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
@@ -58,7 +58,7 @@ require('nvim-tree').setup({
     highlight_bookmarks = 'none',
     highlight_clipboard = 'name',
     indent_markers = {
-      enable = false,
+      enable = true,
       inline_arrows = true,
       icons = {
         corner = '└',

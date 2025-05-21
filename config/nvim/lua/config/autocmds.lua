@@ -8,7 +8,6 @@ autocmd('FileType', {
   end,
 })
 
--- user event that loads after UIEnter + only if file buf is there
 autocmd({ 'UIEnter', 'BufReadPost', 'BufNewFile' }, {
   group = vim.api.nvim_create_augroup('NvFilePost', { clear = true }),
   callback = function(args)
@@ -34,6 +33,7 @@ autocmd({ 'UIEnter', 'BufReadPost', 'BufNewFile' }, {
   end,
 })
 
+-- ############################################ alacritty
 vim.api.nvim_create_autocmd('VimEnter', {
   group = alacrittyAutoGroup,
   callback = function()
@@ -47,5 +47,14 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
   group = alacrittyAutoGroup,
   callback = function()
     vim.fn.jobstart('alacritty msg --socket $ALACRITTY_SOCKET config -w $ALACRITTY_WINDOW_ID -r', { detach = true })
+  end,
+})
+
+-- ############################################### lazy check
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.defer_fn(function()
+      require('lazy').check({ show = false })
+    end, 100) -- delay en milisegundos
   end,
 })

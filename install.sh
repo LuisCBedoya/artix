@@ -32,7 +32,6 @@ $il intel-ucode
 
 #### Intel Packages
 $il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils intel-compute-runtime lib32-mesa lib32-vulkan-intel vdpauinfo clinfo
-
 #$il mesa vulkan-intel vulkan-tools vulkan-icd-loader intel-media-driver libva-utils linux-firmware lib32-mesa lib32-vulkan-intel vdpauinfo clinfo
 
 #### Nvidia Packages
@@ -60,7 +59,7 @@ $il ffmpeg aom libde265 x265 x264 libmpeg2 xvidcore libtheora libvpx schroedinge
 $il noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji gnu-free-fonts 
 
 #### User Packages
-$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs feh lynx mupdf-tools ranger ffmpegthumbnailer mediainfo syncthing keepassxc
+$il alacritty thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman lxappearance-gtk3 flameshot gpicview neovim nvtop htop libnotify dunst xdg-user-dirs feh lynx mupdf-tools ranger ffmpegthumbnailer mediainfo syncthing keepassxc xclip
 #zathura-pdf-mupdf
 
 #### in yay
