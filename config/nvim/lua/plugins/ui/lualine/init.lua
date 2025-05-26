@@ -9,11 +9,11 @@ _G.switch = function(param, case_table)
 end
 
 M.setup = function(opts)
-  local component = require('plugins.ui.lualine.settings.lualine_component')
+  local component = require('plugins.ui.lualine.settings.modules')
   local theme_option = opts.setOption or 'roundedall'
   component.setShowMode(opts.setMode or 0)
 
-  local gettheme = require('plugins.ui.lualine.settings.lualine_template')
+  local gettheme = require('plugins.ui.lualine.settings.template')
   local theme = gettheme.rounded()
   if theme_option == 'rounded' then
     theme = gettheme.rounded()

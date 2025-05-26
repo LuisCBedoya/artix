@@ -6,7 +6,7 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 75
 end
 
-local icons = require('plugins.ui.lualine.icons')
+local icons = require('plugins.ui.icons.icons')
 local formatter = require('plugins.ui.lualine.settings.formatters_info')
 local linter = require('plugins.ui.lualine.settings.linters_info')
 
@@ -79,7 +79,7 @@ return {
   -- ######################### treesitter info
   treesitter = {
     function()
-      return icons.Tree
+      return icons.lualine.Tree
     end,
     color = function()
       local has_ts, parsers = pcall(require, 'nvim-treesitter.parsers')
@@ -100,9 +100,8 @@ return {
   -- ######################### fileType
   fileType = {
     function()
-      local icon = '{}'
       local ft = vim.bo.filetype
-      return (ft == '' and icon .. ' plain text  ') or (icon .. ' ' .. ft)
+      return (ft == '' and icons.lualine.llaves .. ' plain text  ') or (icons.lualine.llaves .. ' ' .. ft)
     end,
     icon_enabled = false,
     padding = 1,
@@ -112,13 +111,12 @@ return {
     function()
       local status, result = pcall(vim.api.nvim_call_function, 'codeium#GetStatusString', {})
       if status then
-        -- local codeium = all_trim(result)
         local codeium = result
         if codeium then
           if codeium == 'OFF' then
-            return icons.CopilotOff
+            return icons.lualine.CopilotOff
           else
-            return icons.Copilot
+            return icons.lualine.Copilot
           end
         else
           return ''
@@ -130,7 +128,6 @@ return {
     color = function()
       local status, result = pcall(vim.api.nvim_call_function, 'codeium#GetStatusString', {})
       if status then
-        -- local codeium = all_trim(result)
         local codeium = result
         if codeium then
           return { fg = codeium == 'OFF' and '#3E4452' or '#98C379' }
@@ -157,7 +154,7 @@ return {
   -- ######################### fileInfo
   fileInfo = {
     function()
-      local icon = ''
+      local icon = icons.ui.Location
       local filename = vim.fn.expand('%:t')
       if filename == '' then
         filename = 'Empty'
@@ -259,16 +256,16 @@ return {
     'diff',
     colored = true,
     symbols = {
-      added = icons.LineAdded .. ' ',
-      modified = icons.LineModified .. ' ',
-      removed = icons.LineRemoved .. ' ',
+      added = icons.git.LineAdded .. ' ',
+      modified = icons.git.LineModified .. ' ',
+      removed = icons.git.LineRemoved .. ' ',
     },
     cond = hide_in_width,
   },
 
   -- ######################### git branch info
   get_branch = function()
-    local icon = icons.Branch3 or ''
+    local icon = icons.git.Branch3 or ''
     local branch = vim.b.gitsigns_head
     local suffix = ''
 
@@ -329,7 +326,7 @@ return {
       -- local shiftwidth = vim.api.nvim_buf_get_option(0, "shiftwidth")
       -- local shiftwidth = vim.api.nvim_get_option_value("shiftwidth", { scope = "buf", bufnr = 0 })
       local shiftwidth = vim.fn.shiftwidth()
-      return icons.Tab .. ' ' .. shiftwidth
+      return icons.lualine.Tab .. ' ' .. shiftwidth
     end,
     padding = 1,
   },
@@ -410,9 +407,9 @@ return {
     separator = { left = '' },
     fmt = function(str)
       if show_mode == 1 then
-        return icons.Neovim .. ' ' .. (mode_map[str] or str)
+        return icons.lualine.Neovim .. ' ' .. (mode_map[str] or str)
       elseif show_mode == 2 then
-        return icons.Neovim
+        return icons.lualine.Neovim
       elseif show_mode == 3 then
         return (mode_map[str] or str)
       elseif show_mode == 4 then
@@ -420,7 +417,7 @@ return {
       elseif show_mode == 5 then
         return (mode_icon[str] or str)
       else
-        return icons.Neovim .. ' ' .. str
+        return icons.lualine.Neovim .. ' ' .. str
       end
     end,
   },
@@ -431,9 +428,9 @@ return {
     separator = { left = '', right = '' },
     fmt = function(str)
       if show_mode == 1 then
-        return icons.Neovim .. ' ' .. str:sub(1, 1)
+        return icons.lualine.Neovim .. ' ' .. str:sub(1, 1)
       elseif show_mode == 2 then
-        return icons.Neovim
+        return icons.lualine.Neovim
       elseif show_mode == 3 then
         return str:sub(1, 1)
       elseif show_mode == 4 then
@@ -441,7 +438,7 @@ return {
       elseif show_mode == 5 then
         return (mode_icon[str] or str)
       else
-        return icons.Neovim .. ' ' .. str
+        return icons.lualine.Neovim .. ' ' .. str
       end
     end,
   },
@@ -452,9 +449,9 @@ return {
     separator = { left = '', right = '' },
     fmt = function(str)
       if show_mode == 1 then
-        return icons.Neovim .. ' ' .. (mode_map[str] or str)
+        return icons.lualine.Neovim .. ' ' .. (mode_map[str] or str)
       elseif show_mode == 2 then
-        return icons.Neovim
+        return icons.lualine.Neovim
       elseif show_mode == 3 then
         return (mode_map[str] or str)
       elseif show_mode == 4 then
@@ -462,7 +459,7 @@ return {
       elseif show_mode == 5 then
         return (mode_icon[str] or str)
       else
-        return icons.Neovim .. ' ' .. str
+        return icons.lualine.Neovim .. ' ' .. str
       end
     end,
   },
@@ -473,9 +470,9 @@ return {
     separator = { left = '', right = '' },
     fmt = function(str)
       if show_mode == 1 then
-        return icons.Neovim .. ' ' .. (mode_map[str] or str)
+        return icons.lualine.Neovim .. ' ' .. (mode_map[str] or str)
       elseif show_mode == 2 then
-        return icons.Neovim
+        return icons.lualine.Neovim
       elseif show_mode == 3 then
         return (mode_map[str] or str)
       elseif show_mode == 4 then
@@ -483,7 +480,7 @@ return {
       elseif show_mode == 5 then
         return (mode_icon[str] or str)
       else
-        return icons.Neovim .. ' ' .. str
+        return icons.lualine.Neovim .. ' ' .. str
       end
     end,
   },
@@ -494,9 +491,9 @@ return {
     separator = { left = '' },
     fmt = function(str)
       if show_mode == 1 then
-        return icons.Neovim .. ' ' .. (mode_map[str] or str)
+        return icons.lualine.Neovim .. ' ' .. (mode_map[str] or str)
       elseif show_mode == 2 then
-        return icons.Neovim
+        return icons.lualine.Neovim
       elseif show_mode == 3 then
         return (mode_map[str] or str)
       elseif show_mode == 4 then
@@ -504,32 +501,31 @@ return {
       elseif show_mode == 5 then
         return (mode_icon[str] or str)
       else
-        return icons.Neovim .. ' ' .. str
+        return icons.lualine.kNeovim .. ' ' .. str
       end
     end,
   },
 
   -- ######################### colors
   mode_colors = {
-    n = '#303340',
-    no = '#303340',
-    cv = '#303340',
-    ce = '#303340',
-    -- ['!'] = ,
-    t = '#22242d',
-    i = '#22242d',
-    v = '#83858c',
-    [''] = '#595c66',
-    V = '#595c66',
-    -- c = ,
-    -- s = ,
-    -- S = ,
-    -- [''] = ,
-    -- ic = ,
-    -- R = ,
-    -- Rv = ,
-    -- r = ,
-    -- rm = ,
-    -- ['r?'] = ,
+    n = '#3a3d4a', -- normal
+    no = '#3a3d4a',
+    cv = '#3a3d4a',
+    ce = '#3a3d4a',
+    t = '#2f313c', -- terminal
+    i = '#2f313c', -- insert
+    ic = '#2f313c',
+    v = '#6b6e76', -- visual
+    V = '#5a5d66',
+    [''] = '#4c4f57', -- visual block
+    c = '#454852', -- command
+    s = '#62656d', -- select
+    S = '#5a5d65',
+    [''] = '#4a4d55', -- select block
+    R = '#7c7f87', -- replace
+    Rv = '#70737b',
+    r = '#888b93', -- hit-enter prompt
+    rm = '#7e8189', -- more prompt
+    ['r?'] = '#767981', -- confirm
   },
 }

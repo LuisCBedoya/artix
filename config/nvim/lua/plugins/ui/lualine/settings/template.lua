@@ -1,7 +1,7 @@
 local icons = require('plugins.ui.icons.icons')
 local M = {}
 
-local component = require('plugins.ui.lualine.settings.lualine_component')
+local component = require('plugins.ui.lualine.settings.modules')
 local theme_ples_lualine = require('plugins.ui.lualine.settings.colors')
 local treesitter = component.treesitter
 local lsp_info = component.lsp_info
@@ -118,7 +118,6 @@ M.rounded = function()
   local mode = component.mode_rounded
   return {
     options = {
-      theme = colorscheme,
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       disabled_filetypes = M.filetype,
@@ -224,7 +223,6 @@ M.parallelogram = function()
   local mode = component.mode_parallelogram
   return {
     options = {
-      theme = colorscheme,
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       disabled_filetypes = M.filetype,

@@ -69,12 +69,12 @@ local plugins = {
     end,
   },
   --- ui.indent-blankline
-  -- {
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   config = function()
-  --     require('plugins.ui.indent-blankline')
-  --   end,
-  -- },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('plugins.ui.indent-blankline')
+    end,
+  },
   --- ui.iluminate
   {
     'RRethy/vim-illuminate',
@@ -83,13 +83,13 @@ local plugins = {
     end,
   },
   --- ui.barbecue
-  -- {
-  --   'utilyre/barbecue.nvim',
-  --   event = { 'BufEnter', 'FileType' },
-  --   config = function()
-  --     require('plugins.ui.barbecue')
-  --   end,
-  -- },
+  {
+    'utilyre/barbecue.nvim',
+    event = { 'BufEnter', 'FileType' },
+    config = function()
+      require('plugins.ui.barbecue')
+    end,
+  },
   {
     'SmiteshP/nvim-navic',
   },
@@ -108,7 +108,9 @@ local plugins = {
   {
     'akinsho/bufferline.nvim',
     config = function()
-      require('plugins.ui.bufferline')
+      vim.opt.termguicolors = true
+      local config = require('plugins.ui.bufferline').config()
+      require('bufferline').setup(config)
     end,
     -- event = 'User FileOpened',
   },
@@ -118,7 +120,6 @@ local plugins = {
     event = { 'InsertEnter', 'BufRead', 'BufNewFile' },
     config = function()
       local lualine = require('plugins.ui.lualine')
-      local color = 'ples'
       -- rounded
       -- roundedall
       -- square
@@ -194,12 +195,22 @@ local plugins = {
     end,
   },
   --- tools.cool-substitute
+  -- {
+  --   'otavioschwanck/cool-substitute.nvim',
+  --   event = { 'BufRead', 'BufNewFile' },
+  --   config = function()
+  --     require('cool-substitute').setup({
+  --       setup_keybindings = true,
+  --     })
+  --   end,
+  -- },
   {
-    'otavioschwanck/cool-substitute.nvim',
-    event = { 'BufRead', 'BufNewFile' },
+    'kylechui/nvim-surround',
+    version = '^3.0.0', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
     config = function()
-      require('cool-substitute').setup({
-        setup_keybindings = true,
+      require('nvim-surround').setup({
+        -- Configuration here, or leave empty to use defaults
       })
     end,
   },

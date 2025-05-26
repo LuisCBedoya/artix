@@ -75,7 +75,7 @@ function M.get(config)
     TabLineSel = { fg = p.white, bg = p.gray1 },
     Title = { fg = p.white },
     VertSplit = { fg = groups.border, bg = styles.vert_split },
-    Visual = { bg = p.gray1 },
+    Visual = { bg = '#264F78', fg = '#FFFFFF' },
     VisualNOS = { link = 'Visual' },
     WarningMsg = { fg = p.yellow },
     Whitespace = { fg = p.gray4 },
